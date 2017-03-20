@@ -1,10 +1,16 @@
 {
   "name": "npmTooling",
   "version": "0.0.1",
-  "description": "Assets for my Tooling with NPM Scripts course at Lynda.com",
+  "description": "Assets for Tooling with NPM Scripts course at Lynda.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/planetoftheweb/npmtooling.git"
+    "url": "https://github.com/nerdyrasa/npmtooling.git"
   },
-  "author": "Ray Villalobos"
+  "author": "RB Isaacson",
+  "scripts": {
+    "serve-dev": "live-server builds/development"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
 }
