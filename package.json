@@ -7,14 +7,22 @@
     "url": "https://github.com/nerdyrasa/npmtooling.git"
   },
   "author": "RB Isaacson",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "scripts": {
     "serve-dev": "live-server builds/development",
     "start": "npm run serve-dev",
     "prod-setup": "mkdirp builds/production/js",
     "prestart": "npm run prod-setup",
-    "sass-dev": "node-sass -- watch process/scss --source-map true --output-style expanded process/scss/style.scss --output builds/development/css"
+    "sass-dev": "node-sass -- watch process/scss --source-map true --output-style expanded process/scss/style.scss --output builds/development/css",
+    "js-transform": "babel process/js/**/*.js --watch --out-file builds/development/js/script.js --source-maps"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
     "live-server": "^1.2.0",
     "node-sass": "^4.5.0"
   }
