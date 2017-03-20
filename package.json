@@ -11,9 +11,11 @@
     "serve-dev": "live-server builds/development",
     "start": "npm run serve-dev",
     "prod-setup": "mkdirp builds/production/js",
-    "prestart": "npm run prod-setup"
+    "prestart": "npm run prod-setup",
+    "sass-dev": "node-sass -- watch process/scss --source-map true --output-style expanded process/scss/style.scss --output builds/development/css"
   },
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "live-server": "^1.2.0",
+    "node-sass": "^4.5.0"
   }
 }
