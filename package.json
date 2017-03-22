@@ -13,17 +13,18 @@
     ]
   },
   "scripts": {
-    "serve-dev": "live-server builds/development",
-    "start": "npm run serve-dev",
-    "prod-setup": "mkdirp builds/production/js",
-    "prestart": "npm run prod-setup",
-    "sass-dev": "node-sass -- watch process/scss --source-map true --output-style expanded process/scss/style.scss --output builds/development/css",
-    "js-transform": "babel process/js/**/*.js --watch --out-file builds/development/js/script.js --source-maps"
+    "start": "npm-run-all --parallel dev:*",
+    "dev:serve-dev": "live-server builds/development",
+
+    "dev:js-transform": "babel process/js/**/*.js --watch --out-file builds/development/js/script.js --source-maps",
+
+    "prod-setup": "mkdirp builds/production/js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-es2015": "^6.24.0",
     "live-server": "^1.2.0",
-    "node-sass": "^4.5.0"
+    "node-sass": "^4.5.0",
+    "npm-run-all": "^4.0.2"
   }
 }
